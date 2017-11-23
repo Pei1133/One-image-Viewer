@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
+        picker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
 //        scrollView.zoomScale = 1.0
         
         
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+//        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
         
     }
@@ -64,16 +65,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         // Dispose of any resources that can be recreated.
     }
 
-    //MARK: - Delegates
+//    MARK: - Delegates
     private func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
-        dismiss(animated: true, completion: nil)
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         imageView.contentMode = .scaleAspectFit //3
         imageView.image = chosenImage //4
         dismiss(animated:true, completion: nil) //5
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
