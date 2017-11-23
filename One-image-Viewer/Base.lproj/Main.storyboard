@@ -17,18 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wun-qz-VzN">
-                                <rect key="frame" x="164" y="610" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXC-ir-Yn8">
+                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wun-qz-VzN">
+                                        <rect key="frame" x="139" y="23" width="96" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Pick an Image"/>
+                                        <connections>
+                                            <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8W-6s-ow8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.87450980392156863" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aXC-ir-Yn8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Vb-4p-amF"/>
+                            <constraint firstItem="aXC-ir-Yn8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="K9a-Hy-k21"/>
+                            <constraint firstItem="aXC-ir-Yn8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dNl-Bu-B69"/>
+                            <constraint firstItem="aXC-ir-Yn8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="570" id="mYf-BL-TZB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>
