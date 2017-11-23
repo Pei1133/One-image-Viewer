@@ -33,13 +33,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
 
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
+        
+        scrollView.showsHorizontalScrollIndicator = true
+        scrollView.showsVerticalScrollIndicator = true
 
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        scrollView.contentOffset = CGPoint(x: 300, y: 300)
         scrollView.delegate = self
-        scrollView.minimumZoomScale = 0.1
-        scrollView.maximumZoomScale = 2.0
-        scrollView.zoomScale = 1.0
+
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -52,22 +53,22 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
 
         let minScale = min(widthScale, heightScale)
         scrollView.minimumZoomScale = minScale
-
+        scrollView.maximumZoomScale = 2.0
         scrollView.zoomScale = minScale
     }
+    
 //    func setZoomScale() {
 //        let imageViewSize = imageView.bounds.size
 //        let scrollViewSize = scrollView.bounds.size
 //        let widthScale = scrollViewSize.width / imageViewSize.width
 //        let heightScale = scrollViewSize.height / imageViewSize.height
-//        
+//
 //        scrollView.minimumZoomScale = min(widthScale, heightScale)
 //        scrollView.zoomScale = 1.0
 //    }
-//    
+    
     override func viewWillLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         updateMinZoomScaleForSize(view.bounds.size)
 //        setZoomScale()
     }

@@ -20,9 +20,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXC-ir-Yn8" userLabel="backgroundView">
                                 <rect key="frame" x="0.0" y="590" width="375" height="77"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wun-qz-VzN">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wun-qz-VzN">
                                         <rect key="frame" x="139" y="23" width="96" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Pick an Image">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,6 +32,12 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.87450980392156863" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="wun-qz-VzN" firstAttribute="top" secondItem="aXC-ir-Yn8" secondAttribute="top" constant="23" id="NJG-Wj-ZGs"/>
+                                    <constraint firstAttribute="trailing" secondItem="wun-qz-VzN" secondAttribute="trailing" constant="140" id="OEy-Et-vlH"/>
+                                    <constraint firstItem="wun-qz-VzN" firstAttribute="leading" secondItem="aXC-ir-Yn8" secondAttribute="leading" constant="139" id="Vcc-WG-3N7"/>
+                                    <constraint firstAttribute="bottom" secondItem="wun-qz-VzN" secondAttribute="bottom" constant="24" id="qwL-kq-h6B"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
