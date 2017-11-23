@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate {
 
+
     var scrollView: UIScrollView!
     var imageView: UIImageView!
     let picker = UIImagePickerController()
@@ -19,8 +20,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
-//        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-//        present(picker, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +30,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
         scrollView = UIScrollView(frame: imageView.bounds)
         scrollView.contentSize = imageView.bounds.size
         scrollView.backgroundColor = UIColor.black
-        
+
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
-        
+
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        scrollView.contentOffset = CGPoint(x: 100, y: 250)
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
         scrollView.delegate = self
-//        scrollView.minimumZoomScale = 0.1
-//        scrollView.maximumZoomScale = 2.0
-//        scrollView.zoomScale = 1.0
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 2.0
+        scrollView.zoomScale = 1.0
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
