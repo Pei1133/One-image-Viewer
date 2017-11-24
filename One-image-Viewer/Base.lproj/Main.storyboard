@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,6 +37,7 @@
                                     <constraint firstItem="wun-qz-VzN" firstAttribute="top" secondItem="aXC-ir-Yn8" secondAttribute="top" constant="23" id="NJG-Wj-ZGs"/>
                                     <constraint firstAttribute="trailing" secondItem="wun-qz-VzN" secondAttribute="trailing" constant="140" id="OEy-Et-vlH"/>
                                     <constraint firstItem="wun-qz-VzN" firstAttribute="leading" secondItem="aXC-ir-Yn8" secondAttribute="leading" constant="139" id="Vcc-WG-3N7"/>
+                                    <constraint firstAttribute="height" constant="77" id="bxK-zm-Na4"/>
                                     <constraint firstAttribute="bottom" secondItem="wun-qz-VzN" secondAttribute="bottom" constant="24" id="qwL-kq-h6B"/>
                                 </constraints>
                             </view>
@@ -45,7 +47,6 @@
                             <constraint firstItem="aXC-ir-Yn8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Vb-4p-amF"/>
                             <constraint firstItem="aXC-ir-Yn8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="K9a-Hy-k21"/>
                             <constraint firstItem="aXC-ir-Yn8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dNl-Bu-B69"/>
-                            <constraint firstItem="aXC-ir-Yn8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="570" id="mYf-BL-TZB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 
     var scrollView: UIScrollView!
-    var imageView: UIImageView!
+    var imageView = UIImageView()
     let picker = UIImagePickerController()
     var fullSize = UIScreen.main.bounds.size
+    
     
     @IBAction func tapButton(_ sender: UIButton) {
         picker.allowsEditing = false
@@ -23,23 +24,33 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.delegate = self
+        imageView.isUserInteractionEnabled = true
         
-        imageView = UIImageView(image: UIImage(named: "icon_photo"))
-        imageView.bounds = CGRect(x:0, y:0 ,width: fullSize.width, height: fullSize.height - 50 )
-        scrollView = UIScrollView(frame: imageView.bounds)
+        
+        imageView.frame = CGRect(x:0, y:0 ,width: fullSize.width, height: fullSize.height - 77 )
+        imageView.image = UIImage(named: "icon_photo")
+
+        imageView.contentMode = .center
+
+        scrollView = UIScrollView(frame: imageView.frame)
         scrollView.contentSize = imageView.bounds.size
-        scrollView.backgroundColor = UIColor.black
+        scrollView.backgroundColor = UIColor.white
 
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
+        print(imageView.center)
+
         
         scrollView.showsHorizontalScrollIndicator = true
         scrollView.showsVerticalScrollIndicator = true
 
         scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        scrollView.contentOffset = CGPoint(x: 300, y: 300)
+//        scrollView.contentOffset = CGPoint(x: 300, y: 300)
         scrollView.delegate = self
+        
+        scrollView.maximumZoomScale = 2.0
+
 
     }
     
@@ -53,7 +64,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
 
         let minScale = min(widthScale, heightScale)
         scrollView.minimumZoomScale = minScale
-        scrollView.maximumZoomScale = 2.0
         scrollView.zoomScale = minScale
     }
     
@@ -89,17 +99,19 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIImagePickerContr
     }
 
 //    MARK: - UIImagePickerControllerDelegate
-    private func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : Any])
     {
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = chosenImage
+            print(chosenImage)
+
         imageView.contentMode = .scaleAspectFit
-        imageView.image = chosenImage
         }
         dismiss(animated:true, completion: nil)
     }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//    }
 }
 
 
